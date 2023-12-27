@@ -1,0 +1,23 @@
+syntax = "proto3";
+// 生成的包名
+option java_package = "cn.xjn.protobuf";
+// 生成多个文件
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option java_string_check_utf8 = true;
+
+message CreateGroupRequestPacket {
+  // version
+  bytes version = 1;
+  // userIds, split by comma
+  repeated string userIds = 2;
+}
+
+message GroupMessageRequestPacket {
+  // version
+  bytes version = 1;
+  // to group id
+  string toGroupId = 2;
+  // message
+  string message = 3;
+}
